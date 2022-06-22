@@ -17,13 +17,13 @@ Screenshot: \
 - The website is accessibility supported.
 
 ### Todo
-- Mobile  and tablet design
+- Mobile  and tablet design - Done
 - Hosting in AWS S3
-- Move movie data and other data in separate constant files. 
-- Get Movies data from API using Fetch
+- Move movie data and other data in separate constant files.  - Done
+- Get Movies data from API using Fetch 
 - Write Movies API in Next JS
 - Write unit test cases
-- Move React components into separate files
+- Move React components into separate files - Done
 
 
 
