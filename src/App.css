@@ -1,147 +1,284 @@
-@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Exo 2', sans-serif;
-  color: white;
-  font-size: 14px;
-
-  min-height: 100vh;
-  place-items: center;
+  background-color: black;
 }
 
-/* #movie {
+header {
+  border-bottom: 1px solid rgba(169, 169, 169, 0.368);
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.heading {
+  color: whitesmoke;
+  font-size: 27px;
+  font-weight: bold;
+  margin-left: 39px;
+  color: #e0ffffd9;
+}
+
+
+#book-movie {
   display: flex;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
-  align-items: flex-start;
-} */
+  margin-top: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(169, 169, 169, 0.368);
+  padding-bottom: 30px;
 
-.Movies {
-  margin-bottom: 24px;
 }
 
-.Movies select {
-  appearance: none;
-  background: white;
-  font-size: 14px;
+#selected-movie {
+  color: white;
   margin-left: 12px;
   border-radius: 4px;
   padding: 6px 24px;
 }
 
-.ShowCase {
-  margin: 25px 0;
-  list-style: none;
+label {
+  color: white;
+}
+
+ul.movies-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  list-style-type: none;
+  padding-right: 40px;
+  color: white;
+
+}
+
+.showcase {
   display: flex;
-  justify-content: center;
-  padding: 0 12px;
-  border-radius: 4px;
-  color: #7e7e7e;
+  color: white;
+  list-style-type: none;
+  gap: 10px;
+  padding-left: 0;
+
 }
 
-.ShowCase li {
-  margin: 0 12px;
+.text {
+  margin-left: 10px;
+  color: gray;
 }
 
-.Cinema {
-  margin-bottom: 18px;
-  perspective: 400px;
-
-  display: grid;
-  place-items: center;
-  grid-gap: 24px;
-}
-
-.Cinema .screen {
-  height: 57px;
-  background: white;
-  width: 78%;
-  transform: rotateX(-30deg) scale(1.1);
-  box-shadow: 0 3px 10px 2px;
-}
-
-.Cinema .seats {
-  display: grid;
-  grid-gap: 6px;
-  grid-template-columns: repeat(8, min-content);
-  align-items: center;
-}
-
-.Cinema .seats .seat:nth-of-type(8n + 2) {
-  margin-right: 12px;
-}
-
-.Cinema .seats .seat:nth-of-type(8n + 6) {
-  margin-right: 12px;
-}
-
-.Cinema .seats .seat:not(.occupied):hover,
-.Cinema .seats .seat:not(.occupied):focus {
+li:hover {
   cursor: pointer;
-  background: #c1eac5;
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
-.Cinema .seats .seat.selected::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 2px;
-  width: 12px;
-  height: 12px;
-  border-radius: 100%;
-  background: transparent;
-  border: 1px solid #7bc47f;
-  animation: show-off 0.8s;
-  visibility: hidden;
+.image-container img {
+  width: 300px;
+  margin: 0;
+
 }
 
-@keyframes show-off {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-    visibility: visible;
-  }
 
-  100% {
-    transform: scale(3);
-    opacity: 0;
-  }
+img {
+  display: block;
+  margin: auto;
+  transition: background-color 300ms;
+
+}
+
+.detail {
+  grid-column: span 2/span 2;
+  font-size: 18px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.movie-name {
+  font-size: 50px;
+  color: greenyellow;
+  margin-top: 0;
+  margin-bottom: 0;
+
+
+}
+
+.watch {
+  font-size: 23px;
+  padding: 12px 20px;
+  background-color: darkred;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+}
+
+#cinema {
+  display: grid;
+  grid-template-columns: repeat(8, min-content);
+  grid-gap: 6px;
+}
+
+#reserve-seat {
+  color: white;
+  width: 327px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid rgb(59 130 246 / 28%);
+  background-color: rgb(59 130 246 / 28%);
+  text-align: center;
+  margin-top: 6px;
+}
+
+.screen {
+  perspective: 400px;
+  margin: 20px 0;
+}
+
+.screen-view {
+  background: #fff;
+  box-shadow: 0 3px 10px 2px #fff;
+  height: 57px;
+  transform: rotateX(-30deg) scale(1.1);
+  width: 258px;
+  margin-bottom: 10px;
 }
 
 .seat {
+  color: white;
   display: inline-block;
-  background: #626262;
-  width: 32px;
-  height: 24px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  transition: transform 0.3s ease-in-out;
-
-  position: relative;
-  top: 1px;
-}
-
-.seat.selected {
-  background: #7bc47f !important;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid rgba(128, 128, 128, 0.377);
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
 }
 
 .seat.occupied {
-  background: #cfcfcf;
+  background-color: gray;
 }
 
-.info .count {
-  color: #7bc47f;
+.seat.occupied {
+  background-color: gray;
 }
 
-.info .total {
-  color: #7bc47f;
+.seat.selected {
+  background-color: green;
+}
+
+.selected-seat {
+  background: green !important;
+}
+
+#cinema .seat:nth-of-type(8n+2),
+#cinema .seat:nth-of-type(8n+6) {
+  margin-right: 12px;
+}
+
+.booking-info {
+  color: whitesmoke;
+  margin-top: 16px;
+}
+
+.booking-info span {
+  color: greenyellow;
+
+}
+
+#cinema-container {
+  margin-right: 12px;
+  padding-right: 24px;
+}
+
+#reserve-seat {
+  max-width: 258px;
+}
+
+#cinema .seat:not(.occupied):focus,
+#cinema .seat:not(.occupied):hover {
+  cursor: pointer;
+  background-color: #7bc47f;
+}
+
+#selected-movie {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* Use a media query for phone */
+@media only screen and (min-width: 313px) and (max-width: 1180px) {
+
+  .heading {
+    display: block;
+  }
+
+  #book-movie {
+    display: block;
+    border-bottom: 1px solid rgba(169, 169, 169, 0.368);
+    margin-left: 20px;
+
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+
+  #selected-movie {
+    display: inline-block;
+  }
+
+  ul.movies-list {
+    display: block;
+  }
+
+  #cinema-container {
+    margin-left: 30px;
+  }
+
+  .screen {
+    display: none;
+  }
+
+  #cinema {
+    margin-left: 15px;
+
+  }
+
+  .booking-info span {
+    display: block;
+  }
+
+  ul.movies-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .showcase {
+    gap: 5px;
+    padding-left: 15px;
+  }
+
+  #reserve-seat {
+    width: 90%
+  }
+
+}
+
+/* Use a media query for tablet */
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1368px) {
+  ul.movies-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+  }
+
+  #reserve-seat {
+    width: 100%;
+  }
+
+  #cinema-container {
+    margin: 0 auto;
+    width: 285px;
+  }
+
+  #sample-seat {
+    display: inline-block;
+  }
 }
