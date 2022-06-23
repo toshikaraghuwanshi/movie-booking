@@ -21,7 +21,7 @@ Screenshot: \
 - Hosting in AWS S3
 - Move movie data and other data in separate constant files.  - Done
 - Get Movies data from API using Fetch 
-- Write Movies API in Next JS
+- Write Movies API in Express JS
 - Write unit test cases
 - Move React components into separate files - Done
 
